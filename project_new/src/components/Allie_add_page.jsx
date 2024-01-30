@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import Navbar from './Navbar';
 
 const typesOfAllies = ['Cleaners', 'Milkmen', 'Carpenters', 'Plumbers', 'Painters'];
 
 const initialState = {
-  allieName: '',
-  contactNo: '',
+  name: '',
+  contact: '',
   fees: '',
   available: false,
   occupied: false,
@@ -37,7 +36,7 @@ const Allie_add_page = () => {
             (option) => option.value
         );
         setState({
-            ...state, allieTypes: selectedOptions
+            ...state, type_of_allie: selectedOptions
         });
     }
 
@@ -53,7 +52,6 @@ const Allie_add_page = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <Navbar/>
       <div className="container mx-auto flex flex-col md:flex-row bg-white rounded-lg shadow-lg overflow-hidden">
         {/* Left Half - Image */}
         <div className="w-full md:w-1/2">
@@ -65,23 +63,23 @@ const Allie_add_page = () => {
           <h2 className="text-2xl font-semibold mb-4">Add Your Services</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label htmlFor="allieName" className="block text-sm font-medium text-gray-700">Allie Name</label>
-              <input type="text" id="allieName" name="allieName" value={state.allieName} onChange={handleChange} className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700">Allie Name</label>
+              <input type="text" id="name" name="name" value={state.name} onChange={handleChange} className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
             </div>
             <div>
-              <label htmlFor="contactNo" className="block text-sm font-medium text-gray-700">Contact No</label>
-              <input type="tel" id="contactNo" pattern="[0-9]{10}" name="contactNo" value={state.contactNo} onChange={handleChange} className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
+              <label htmlFor="contact" className="block text-sm font-medium text-gray-700">Contact No</label>
+              <input type="tel" id="contact" pattern="[0-9]{10}" name="contact" value={state.contact} onChange={handleChange} className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
             </div>
             <div>
               <label htmlFor="fees" className="block text-sm font-medium text-gray-700">Fees</label>
               <input type="number" id="fees" name="fees" value={state.fees} onChange={handleChange} className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
             </div>
             <div>
-                <label htmlFor="allieTypes" className="block text-sm font-medium text-gray-700">Type Of Allies: </label>
-                <select name="allieTypes" id="allieTypes" value={state.allieTypes} onChange={handleSelectChange} className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" >
-                    {typesOfAllies.map((allieTypes) => (
-                        <option value={allieTypes} key={allieTypes}>
-                            { allieTypes}
+                <label htmlFor="type_of_allie" className="block text-sm font-medium text-gray-700">Type Of Allies: </label>
+                <select name="type_of_allie" id="type_of_allie" value={state.type_of_allie} onChange={handleSelectChange} className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" >
+                    {typesOfAllies.map((type_of_allie) => (
+                        <option value={type_of_allie} key={type_of_allie}>
+                            { type_of_allie}
                         </option>
                     )) }
                 </select>              

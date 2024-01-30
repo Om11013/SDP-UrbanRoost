@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 const initialState = {
-  fullname: '',
+  name: '',
   contact: '',
   email: '',
   password: '',
@@ -15,9 +15,17 @@ const SignUp = () => {
 
   const [state, setState] = useState(initialState);
 
-  const handleChange = (event) => { 
-      setState({...state,[event.target.name]:event.target.value});
+  // const handleChange = (event) => {
+  //     setState({...state,[event.target.name]:event.target.value});
+  // }
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setState(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
   }
+  
 
   const handleSubmit = (event) => { 
       event.preventDefault();
@@ -27,17 +35,19 @@ const SignUp = () => {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(state)
       }).then(() => {
-          console.log("New Entry done")
+        console.log("New Entry done")
+        console.log(JSON.stringify(state))
       }).catch(error=>console.error('Error occured: ',error));
   }
-  useEffect(()=>{
-      fetch("http://localhost:8080/owner/getAll")
-      .then(res=>res.json())
-      .then((state)=>{
-        setState(state);
-      }
-    )
-    },[])
+  useEffect(() => {
+    console.log(state);
+    //   fetch("http://localhost:8080/owner/getAll")
+    //   .then(res=>res.json())
+    //   .then((state)=>{
+    //     setState(state);
+    //   }
+    // )
+    },[state])
 
   return (
     <div className="bg-gray-100 h-screen flex items-center justify-center">
@@ -54,8 +64,8 @@ const SignUp = () => {
                   <label htmlFor="isAllie">Allie</label>
         </div>
           <div>
-                  <label htmlFor="fullname" className="block text-gray-600 text-sm mb-2">Fullname: </label>
-                  <input type="text" id="fullname" name="fullname" value={state.fullname} onChange={handleChange} className="w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-500"/>
+                  <label htmlFor="name" className="block text-gray-600 text-sm mb-2">name: </label>
+                  <input type="text" id="name" name="name" value={state.name} onChange={handleChange} className="w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-500"/>
               </div>
               <div>
                   <label htmlFor="contact" className="block text-gray-600 text-sm mb-2">Contact: </label>
