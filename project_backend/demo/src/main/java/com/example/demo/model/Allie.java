@@ -9,11 +9,14 @@ import jakarta.persistence.Id;
 public class Allie {
     public Allie() {
     }
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id=1;
-    private String name;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id = 1;
+    private String allieName;
     private String contact;
     private String type_of_allie;
+    private long fees;
 
     public int getId() {
         return id;
@@ -23,12 +26,12 @@ public class Allie {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getAllieName() {
+        return allieName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAllieName(String allieName) {
+        this.allieName = allieName;
     }
 
     public String getContact() {
@@ -45,5 +48,13 @@ public class Allie {
 
     public void setType_of_allie(String type_of_allie) {
         this.type_of_allie = type_of_allie;
+    }
+
+    public long getFees() {
+        return fees;
+    }
+
+    public void setFees(long fees) {
+        this.fees = fees;
     }
 }

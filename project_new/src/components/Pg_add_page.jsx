@@ -28,14 +28,15 @@ const Pg_add_page = () => {
         console.log("New Entry done")
     }).catch(error=>console.error('Error occured: ',error));
   }
-  useEffect(()=>{
-    fetch("http://localhost:8080/property/getAll")
-    .then(res=>res.json())
-    .then((state)=>{
-      setState(state);
-    }
-  )
-  },[])
+  useEffect(() => {
+    console.log(state);
+  //   fetch("http://localhost:8080/property/getAll")
+  //   .then(res=>res.json())
+  //   .then((state)=>{
+  //     setState(state);
+  //   }
+  // )
+  },[state])
   
 
   return (

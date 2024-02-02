@@ -64,7 +64,7 @@ const SignUp = () => {
                   <label htmlFor="isAllie">Allie</label>
         </div>
           <div>
-                  <label htmlFor="name" className="block text-gray-600 text-sm mb-2">name: </label>
+                  <label htmlFor="name" className="block text-gray-600 text-sm mb-2">Name: </label>
                   <input type="text" id="name" name="name" value={state.name} onChange={handleChange} className="w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-500"/>
               </div>
               <div>
