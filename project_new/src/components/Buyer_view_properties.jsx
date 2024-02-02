@@ -20,7 +20,7 @@ function Buyer_view_properties() {
             <div className="text-gray-800">
               <h3 className="font-bold text-lg mb-2">{property.ownerName}</h3>
               <p><span className="font-bold">Contact:</span> {property.contact}</p>
-              <p><span className="font-bold">Location:</span> {property.Location}</p>
+              <p><span className="font-bold">Location:</span> {property.location}</p>
               <p><span className="font-bold">Rent:</span> {property.rent}</p>
               <p><span className="font-bold">Available:</span> {property.available ? 'Yes' : 'No'}</p>
               <p><span className="font-bold">Occupied:</span> {property.occupied ? 'Yes' : 'No'}</p>
