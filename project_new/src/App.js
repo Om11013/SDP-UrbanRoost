@@ -11,6 +11,7 @@ import Pg_owner_dashboard from './components/Pg_owner_dashboard';
 import Pg_add_page from './components/Pg_add_page';
 import Allie_dashboard from './components/Allie_dashboard';
 import Allie_add_page from './components/Allie_add_page';
+import Buyer_view_properties from './components/Buyer_view_properties';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route exact path="/Pg_add_page" element={<Pg_add_page />} />
             <Route exact path="/Allie_dashboard" element={<Allie_dashboard />} />
             <Route exact path="/Allie_add_page" element={ <Allie_add_page/>}/>
+            <Route exact path="/Buyer_view_properties" element={ <Buyer_view_properties/>}/>
 
           </Routes>
         </div>

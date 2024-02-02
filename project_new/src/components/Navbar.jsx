@@ -20,6 +20,8 @@ const Navbar = () => {
           <li className='p-4 hover:bg-slate-700 rounded-md ' ><Link to="/signin">Sign In</Link></li>
           <li className='p-4 hover:bg-slate-700 rounded-md ' ><Link to="/Pg_owner_dashboard">Pg_owner_dashboard</Link></li>
           <li className='p-4 hover:bg-slate-700 rounded-md ' ><Link to="/Allie_dashboard">Allie_dashboard</Link></li>
+          <li className='p-4 hover:bg-slate-700 rounded-md ' ><Link to="/Buyer_view_properties">View Properties</Link></li>
+          
 
           
         </ul>

@@ -12,10 +12,13 @@ public class Property {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id=1;
-    private String Owner_Name;
-    private long Contact_No;
+    private String ownerName;
+    private long contact;
     private long rent;
     private String Location;
+    private Boolean available;
+    private Boolean occupied;
+    private String image;
 
     public int getId() {
         return id;
@@ -25,20 +28,20 @@ public class Property {
         this.id = id+1;
     }
 
-    public String getOwner_Name() {
-        return Owner_Name;
+    public String getOwnerName() {
+        return ownerName;
     }
 
-    public void setOwner_Name(String owner_Name) {
-        Owner_Name = owner_Name;
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
     }
 
-    public long getContact_No() {
-        return Contact_No;
+    public long getContact() {
+        return contact;
     }
 
-    public void setContact_No(long contact_No) {
-        Contact_No = contact_No;
+    public void setContact(long contact) {
+        this.contact = contact;
     }
 
     public long getRent() {
@@ -57,16 +60,27 @@ public class Property {
         Location = location;
     }
 
-    public String getImage_Url() {
-        return Image_Url;
+    public String getImage() {
+        return image;
     }
 
-    public void setImage_Url(String image_Url) {
-        Image_Url = image_Url;
+    public void setImage(String image) {
+        this.image = image;
     }
 
-    private String Image_Url;
+    public Boolean getAvailable() {
+        return available;
+    }
 
+    public void setAvailable(Boolean available) {
+        this.available = available;
+    }
 
+    public Boolean getOccupied() {
+        return occupied;
+    }
 
+    public void setOccupied(Boolean occupied) {
+        this.occupied = occupied;
+    }
 }

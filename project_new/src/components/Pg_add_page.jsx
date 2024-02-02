@@ -1,12 +1,12 @@
 import React, { useEffect,useState} from 'react';
-import Navbar from './Navbar';
+// import Navbar from './Navbar';
 
 const initialState = {
   ownerName: '',
-  contactNo: '',
+  contact: '',
   rent: '',
-  available: false,
-  occupied: false,
+  available: '',
+  occupied: '',
   location: '',
   image: ''
 }
@@ -40,7 +40,7 @@ const Pg_add_page = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <Navbar/>
+      {/* <Navbar/> */}
       <div className="container mx-auto flex flex-col md:flex-row bg-white rounded-lg shadow-lg overflow-hidden">
         {/* Left Half - Image */}
         <div className="w-full md:w-1/2">
@@ -56,10 +56,10 @@ const Pg_add_page = () => {
               <input type="text" id="ownerName" name="ownerName" value={state.ownerName} onChange={handleChange} className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
             </div>
             <div>
-              <label htmlFor="contactNo" className="block text-sm font-medium text-gray-700">Contact No</label>
-              <input type="tel" id="contactNo" pattern="[0-9]{10}" name="contactNo" value={state.contactNo} onChange={handleChange} className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
+              <label htmlFor="contact" className="block text-sm font-medium text-gray-700">Contact No</label>
+              <input type="tel" id="contact" pattern="[0-9]{10}" name="contact" value={state.contact} onChange={handleChange} className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
             </div>
-            <div>
+            <div> 
               <label htmlFor="rent" className="block text-sm font-medium text-gray-700">Rent</label>
               <input type="number" id="rent" name="rent" value={state.rent} onChange={handleChange} className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
             </div>
