@@ -5,19 +5,24 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
+  const [more, setMore] = useState(false);
   const handleNav = () => {
     setNav(!nav);
   }; 
+  const handleMore = () => {
+    setMore(!more);
+  }
 
   return (
-      <div className=' p-4 flex justify-between items-center h-24 max-w-[1200px] mx-auto px-auto text-white'>
+      <div className='z-50 sticky top-0 bg-black bg-opacity-15 backdrop-blur-md p-12 w-full  flex justify-between items-center h-24  mx-auto px-auto text-white'>
         <h1 className='w-10 text-4xl text-amber-400 font-extrabold'><Link to="/">UrbanRoost</Link></h1>
-        <ul className=' hidden md:flex '>
+        {/* <ul className=' hidden lg:flex '>
           <li className='p-4  hover:bg-slate-700 rounded-md '><Link to="/">Home</Link></li>
           <li className='p-4  hover:bg-slate-700 rounded-md '><Link to="/aboutus">About Us</Link></li>
           <li className='p-4  hover:bg-slate-700 rounded-md '><Link to="/contactus">Contact Us</Link></li>
           <li className='p-4  hover:bg-slate-700 rounded-md '><Link to="/signup">Sign Up</Link></li>
-          {/* <li className='p-4 hover:bg-slate-700 rounded-md ' ><Link to="/signin">Sign In</Link></li> */}
+          
+
           <li className='p-4 hover:bg-slate-700 rounded-md ' ><Link to="/Pg_owner_dashboard">Owner dashboard</Link></li>
           <li className='p-4 hover:bg-slate-700 rounded-md ' ><Link to="/Allie_dashboard">Allie dashboard</Link></li>
           <li className='p-4 hover:bg-slate-700 rounded-md ' ><Link to="/Buyer_view_properties">View Properties</Link></li>
@@ -25,8 +30,36 @@ const Navbar = () => {
           
 
           
-        </ul>
-        <div onClick={handleNav} className='block md:hidden'>
+        </ul> */}
+      <ul className='hidden lg:flex'>
+        <li className='p-4 hover:bg-slate-700 rounded-md'><Link to="/">Home</Link></li>
+        <li className='p-4 hover:bg-slate-700 rounded-md'><Link to="/aboutus">About Us</Link></li>
+        <li className='p-4 hover:bg-slate-700 rounded-md'><Link to="/contactus">Contact Us</Link></li>
+        <li className='p-4 hover:bg-slate-700 rounded-md'><Link to="/signup">Sign Up</Link></li>
+        {/* Dropdown menu */}
+        <li className='relative'>
+          <div className='p-4 hover:bg-slate-700 rounded-md cursor-pointer' onClick={handleMore}>
+            More
+          </div>
+          {more && (
+            <ul className='absolute top-full left-0 bg-gray-500 border-t border-r border-l border-gray-700 z-10'>
+              <li className='p-4 hover:bg-slate-700'>
+                <Link to="/Pg_owner_dashboard">Owner dashboard</Link>
+              </li>
+              <li className='p-4 hover:bg-slate-700'>
+                <Link to="/Allie_dashboard">Allie dashboard</Link>
+              </li>
+              <li className='p-4 hover:bg-slate-700'>
+                <Link to="/Buyer_view_properties">View Properties</Link>
+              </li>
+              <li className='p-4 hover:bg-slate-700'>
+                <Link to="/View_services">View Services</Link>
+              </li>
+            </ul>
+          )}
+        </li>
+      </ul>
+        <div onClick={handleNav} className='block lg:hidden'>
           {nav ? <RxCross1 size={20} /> : <FiMenu size={20} />}
         </div>
         <div className={!nav ?  'fixed left-[-100%]':'fixed left-0 top-0 w-[50%] h-full border-r border-r-gray-500 bg-gray-500 ease-in-out duration-300' }>

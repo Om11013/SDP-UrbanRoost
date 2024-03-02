@@ -6,9 +6,13 @@ const Pg_owner_dashboard = () => {
 
   return (
     <div>
-      <Navbar/>
+      <Navbar
+        
+      >
+
+      </Navbar>
       <div className="min-h-screen relative">
-        <div className="bg-cover bg-center absolute inset-0" style={{ backgroundImage: "url('https://images.pexels.com/photos/269077/pexels-photo-269077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')" }}></div>
+        <div className="bg-cover bg-center absolute top-0 inset-0" style={{ backgroundImage: "url('https://images.pexels.com/photos/269077/pexels-photo-269077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')" }}></div>
 
         <div className="absolute inset-0 bg-black opacity-50"></div>
 
