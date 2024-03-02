@@ -2,9 +2,8 @@
 import React, {useEffect,useState} from 'react'
 import { Link } from 'react-router-dom';
 
-
 const initialState = {
-  name: '',
+  username: '',
   contact: '',
   email: '',
   password: '',
@@ -15,17 +14,9 @@ const SignUp = () => {
 
   const [state, setState] = useState(initialState);
 
-  // const handleChange = (event) => {
-  //     setState({...state,[event.target.name]:event.target.value});
-  // }
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setState(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
+  const handleChange = (event) => { 
+      setState({...state,[event.target.name]:event.target.value});
   }
-  
 
   const handleSubmit = (event) => { 
       event.preventDefault();
@@ -35,19 +26,17 @@ const SignUp = () => {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(state)
       }).then(() => {
-        console.log("New Entry done")
-        console.log(JSON.stringify(state))
+          console.log("New Entry done")
       }).catch(error=>console.error('Error occured: ',error));
   }
-  useEffect(() => {
-    console.log(state);
+  useEffect(()=>{
     //   fetch("http://localhost:8080/owner/getAll")
     //   .then(res=>res.json())
     //   .then((state)=>{
     //     setState(state);
     //   }
     // )
-    },[state])
+    },[])
 
   return (
     <div className="bg-gray-100 h-screen flex items-center justify-center">
@@ -55,17 +44,17 @@ const SignUp = () => {
         <h2 className="text-gray-800 text-2xl font-semibold mb-4">Sign Up</h2>
         
         <form onSubmit={handleSubmit}>
-        <div className="my-2" >Account Type:  
+          <div className="my-2" >Account Type:
+                  <input type="radio" id="isSecretary" name="role" value="secretary" checked={state.role === "secretary"} onChange={handleChange}/>
+                  <label htmlFor="isSecretary">Secretary</label>
                   <input type="radio" id="isOwner" name="role" value="owner" checked={state.role === "owner"} onChange={handleChange}/>
                   <label htmlFor="isOwner" >Owner</label>
-                  <input type="radio" id="isBuyer" name="role" value="buyer" checked={state.role === "buyer"} onChange={handleChange}/>
-                  <label htmlFor="isbuyer">Buyer</label>
                   <input type="radio" id="isAllie" name="role" value="allie" checked={state.role === "allie"} onChange={handleChange}/>
                   <label htmlFor="isAllie">Allie</label>
         </div>
           <div>
-                  <label htmlFor="name" className="block text-gray-600 text-sm mb-2">Name: </label>
-                  <input type="text" id="name" name="name" value={state.name} onChange={handleChange} className="w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-500"/>
+                  <label htmlFor="username" className="block text-gray-600 text-sm mb-2">Username: </label>
+                  <input type="text" id="username" name="username" value={state.username} onChange={handleChange} className="w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-500"/>
               </div>
               <div>
                   <label htmlFor="contact" className="block text-gray-600 text-sm mb-2">Contact: </label>

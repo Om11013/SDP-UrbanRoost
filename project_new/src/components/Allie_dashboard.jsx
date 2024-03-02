@@ -1,12 +1,12 @@
 // import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-// import Navbar from './Navbar';
+import Navbar from './Navbar';
 
 const Allie_dashboard = () => {
     return (
       
     <div>
-      {/* <Navbar/> */}
+      <Navbar/>
       <div className="min-h-screen relative">
         <div className="bg-cover bg-center absolute inset-0" style={{ backgroundImage: "url('https://jobgrin.co.in/blog/wp-content/uploads/2021/08/Boilermaker.jpg')" }}></div>
 

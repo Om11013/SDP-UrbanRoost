@@ -1,5 +1,4 @@
-import React, { useEffect,useState} from 'react';
-// import Navbar from './Navbar';
+import React, { useEffect, useState } from 'react';
 
 const initialState = {
   ownerName: '',
@@ -62,7 +61,7 @@ const Pg_add_page = () => {
             </div>
             <div> 
               <label htmlFor="rent" className="block text-sm font-medium text-gray-700">Rent</label>
-              <input type="number" id="rent" name="rent" value={state.rent} onChange={handleChange} className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
+              <input type="number" id="rent" pattern="[0-9]{1,5}" name="rent" value={state.rent} onChange={handleChange} className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
             </div>
             <div>
               <label htmlFor="availability" className="block text-sm font-medium text-gray-700">Availability of Room</label>

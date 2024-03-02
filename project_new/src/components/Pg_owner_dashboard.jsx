@@ -3,19 +3,6 @@ import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 
 const Pg_owner_dashboard = () => {
-  // const [scrollY, setScrollY] = useState(0);
-
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       setScrollY(window.scrollY);
-//     };
-
-//     window.addEventListener('scroll', handleScroll);
-
-//     return () => {
-//       window.removeEventListener('scroll', handleScroll);
-//     };
-//   }, []);
 
   return (
     <div>
@@ -26,9 +13,9 @@ const Pg_owner_dashboard = () => {
         <div className="absolute inset-0 bg-black opacity-50"></div>
 
         <div className="container mx-36 px-4 py-8 relative z-10">
-          <h1 className="text-5xl font-bold text-white mb-4">ENlist your PG</h1>
+          <h1 className="text-5xl font-bold text-white mb-4">Enlist your Property</h1>
 
-          <p className="text-lg text-white mb-8">Enlisting your PG on our platform can greatly boost your business by reaching a wider audience and streamlining the booking process for potential tenants. Showcase your property to thousands of renters and manage your bookings effortlessly.</p>
+          <p className="text-lg text-white mb-8">Enlisting your Property on our platform can greatly boost your business by reaching a wider audience and streamlining the booking process for potential tenants. Showcase your property to thousands of renters and manage your bookings effortlessly.</p>
 
           <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
           <Link to="/Pg_add_page">Enlist Now</Link>

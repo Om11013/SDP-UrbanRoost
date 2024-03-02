@@ -17,13 +17,15 @@ public class Allie {
     private String contact;
     private String type_of_allie;
     private long fees;
+    private String image;
+
 
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.id = id+1;
     }
 
     public String getAllieName() {
@@ -56,5 +58,13 @@ public class Allie {
 
     public void setFees(long fees) {
         this.fees = fees;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

@@ -23,7 +23,7 @@ function View_services() {
                     <h3 className="font-bold text-lg mb-2">{allie.allieName}</h3>
                     <p><span className="font-bold">Contact:</span> {allie.contact}</p>
                     <p><span className="font-bold">Fees:</span> {allie.fees}</p>
-                    <p><span className="font-bold">Type of Allie:</span> {allie.type_of_allie}</p>
+                    {/* <p><span className="font-bold">Type of Allie:</span> {allie.type_of_allie}</p> */}
                   </div>
               </div>
               ))}

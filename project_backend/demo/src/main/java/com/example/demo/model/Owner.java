@@ -4,6 +4,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 
 @Entity
 public class Owner {
@@ -11,9 +14,13 @@ public class Owner {
     }
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id=1;
-    private String name;
+//    @Pattern(regexp = "^[a-zA-Z ]+$", message = "Characters from (a-z,A-Z) are allowed")@NotBlank(message = "Field cannot be blank")
+    private String username;
+//    @Pattern(regexp = "^[6-9]\\d{9}$",message = "Enter valid contact number")@NotBlank(message = "Field cannot be blank")
     private long contact;
+//    @Size(max=6, message = "Max size is 6")@NotBlank(message = "Field cannot be blank")
     private String password;
+//    @NotBlank(message = "Field cannot be blank")
     private String email;
     private String role;
     public long getContact() {
@@ -40,12 +47,12 @@ public class Owner {
         this.id = id+1;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
