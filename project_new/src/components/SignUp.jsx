@@ -1,6 +1,9 @@
 // SignUp.js
 import React, {useEffect,useState} from 'react'
 import { Link } from 'react-router-dom';
+import Navbar from './Navbar';
+import toast from "react-hot-toast";
+
 
 const initialState = {
   username: '',
@@ -18,38 +21,84 @@ const SignUp = () => {
       setState({...state,[event.target.name]:event.target.value});
   }
 
-  const handleSubmit = (event) => { 
-      event.preventDefault();
-      console.log("Form Data:", state);
-      fetch("http://localhost:8080/owner/add", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(state)
-      }).then(() => {
-          console.log("New Entry done")
-      }).catch(error=>console.error('Error occured: ',error));
+  const handleSubmit = async (event) => { 
+    event.preventDefault();
+    
+    const { username, contact, email, password , role} =
+      state;
+    
+    if (!username || !contact || !email || !password || !role) {
+      return toast.error("Input field should not be empty");
+    }
+
+    console.log("Form Data: ", state);
+
+    fetch(`http://localhost:8080/${state.role}/add`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(state)
+    }).then(() => {
+      console.log(`${state.role} Entry done`)
+      toast(`${state.role} entry done`)
+    }).catch(error => console.error('Error occured: ', error));
+  
+
+    // if (state.role === "owner") {
+    //   fetch("http://localhost:8080/owner/add", {
+    //     method: "POST",
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify(state)
+    //   }).then(() => {
+    //     console.log("Owner Entry done")
+    //     toast("Owner entry done")
+    //   }).catch(error => console.error('Error occured: ', error),
+    //   );
+    // }
+    // else if (state.role === "secretary") {
+    //   fetch("http://localhost:8080/secretary/add", {
+    //     method: "POST",
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify(state)
+    //   }).then(() => {
+    //     console.log("Secretary Entry done")
+    //     toast("Secretary entry done")
+    //   }).catch(error => console.error('Error occured: ', error),
+    //   );
+    // }
+
+
+      // fetch("http://localhost:8080/owner/add", {
+      //     method: "POST",
+      //     headers: { "Content-Type": "application/json" },
+      //     body: JSON.stringify(state)
+      // }).then(() => {
+      //     console.log("New Entry done")
+      // }).catch(error=>console.error('Error occured: ',error));
   }
-  useEffect(()=>{
-    //   fetch("http://localhost:8080/owner/getAll")
-    //   .then(res=>res.json())
-    //   .then((state)=>{
-    //     setState(state);
-    //   }
-    // )
-    },[])
+  // useEffect(()=>{
+  //   //   fetch("http://localhost:8080/owner/getAll")
+  //   //   .then(res=>res.json())
+  //   //   .then((state)=>{
+  //   //     setState(state);
+  //   //   }
+  //   // )
+  //   },[])
 
   return (
+<>
+    <Navbar />
     <div className="bg-gray-100 h-screen flex items-center justify-center">
+      
       <div className="bg-white p-8 rounded shadow-md w-96">
         <h2 className="text-gray-800 text-2xl font-semibold mb-4">Sign Up</h2>
         
         <form onSubmit={handleSubmit}>
           <div className="my-2" >Account Type:
-                  <input type="radio" id="isSecretary" name="role" value="secretary" checked={state.role === "secretary"} onChange={handleChange}/>
+                  <input className='ml-2' type="radio" id="isSecretary" name="role" value="secretary" checked={state.role === "secretary"} onChange={handleChange}/>
                   <label htmlFor="isSecretary">Secretary</label>
-                  <input type="radio" id="isOwner" name="role" value="owner" checked={state.role === "owner"} onChange={handleChange}/>
+                  <input className='ml-2'type="radio" id="isOwner" name="role" value="owner" checked={state.role === "owner"} onChange={handleChange}/>
                   <label htmlFor="isOwner" >Owner</label>
-                  <input type="radio" id="isAllie" name="role" value="allie" checked={state.role === "allie"} onChange={handleChange}/>
+                  <input className='ml-2' type="radio" id="isAllie" name="role" value="allie" checked={state.role === "allie"} onChange={handleChange}/>
                   <label htmlFor="isAllie">Allie</label>
         </div>
           <div>
@@ -75,7 +124,8 @@ const SignUp = () => {
 
         <p className="mt-4 text-sm">Already have an account? <Link to="/signin">Sign In</Link></p>
       </div>
-    </div>
+      </div>
+      </>
   );
 }
 

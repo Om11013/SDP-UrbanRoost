@@ -1,7 +1,7 @@
 package com.example.demo.controller;
-
-import com.example.demo.model.Allie;
 import com.example.demo.service.AllieService;
+import com.example.demo.model.Allie;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,7 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/allie")
 @CrossOrigin
-public class AllieController{
+public class AllieController {
     @Autowired
     private AllieService allieService;
 
@@ -25,4 +25,3 @@ public class AllieController{
         return allieService.getAllAllies();
     }
 }
-

@@ -1,24 +1,41 @@
 package com.example.demo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 
 @Entity
+//@Table(uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 public class Allie {
     public Allie() {
     }
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id=1;
+    //    @Pattern(regexp = "^[a-zA-Z ]+$", message = "Characters from (a-z,A-Z) are allowed")@NotBlank(message = "Field cannot be blank")
+    private String username;
+    //    @Pattern(regexp = "^[6-9]\\d{9}$",message = "Enter valid contact number")@NotBlank(message = "Field cannot be blank")
+    private long contact;
+    //    @Size(max=6, message = "Max size is 6")@NotBlank(message = "Field cannot be blank")
+    private String password;
+    //    @NotBlank(message = "Field cannot be blank")
+    private String email;
+    private String role;
+    public long getContact() {
+        return contact;
+    }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id = 1;
-    private String allieName;
-    private String contact;
-    private String type_of_allie;
-    private long fees;
-    private String image;
+    public void setContact(long contact) {
+        this.contact = contact;
+    }
 
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 
     public int getId() {
         return id;
@@ -28,43 +45,27 @@ public class Allie {
         this.id = id+1;
     }
 
-    public String getAllieName() {
-        return allieName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setAllieName(String allieName) {
-        this.allieName = allieName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getContact() {
-        return contact;
+    public String getPassword() {
+        return password;
     }
 
-    public void setContact(String contact) {
-        this.contact = contact;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getType_of_allie() {
-        return type_of_allie;
+    public String getEmail() {
+        return email;
     }
 
-    public void setType_of_allie(String type_of_allie) {
-        this.type_of_allie = type_of_allie;
-    }
-
-    public long getFees() {
-        return fees;
-    }
-
-    public void setFees(long fees) {
-        this.fees = fees;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

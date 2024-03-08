@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 
-const typesOfAllies = ['Cleaners', 'Milkmen', 'Carpenters', 'Plumbers', 'Painters'];
+const typesOfutilitys = ['Cleaners', 'Milkmen', 'Carpenters', 'Plumbers', 'Painters'];
 
 const initialState = {
   allieName: '',
   contact: '',
   fees: '',
   image: '',
-  type_of_allie: ''
+  type_of_utilitys: ''
 }
 const Allie_add_page = () => {
 
@@ -19,7 +19,7 @@ const Allie_add_page = () => {
   const handleSubmit = (event) => { 
     event.preventDefault();
     console.log("Form Data:", state);
-    fetch("http://localhost:8080/allie/add", {
+    fetch("http://localhost:8080/utility/add", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(state)
@@ -34,13 +34,13 @@ const Allie_add_page = () => {
             (option) => option.value
         );
         setState({
-            ...state, type_of_allie: selectedOptions
+            ...state, type_of_utility: selectedOptions
         });
     }
 
   useEffect(() => {
     console.log(state);
-  //   fetch("http://localhost:8080/allie/getAll")
+  //   fetch("http://localhost:8080/utility/getAll")
   //   .then(res=>res.json())
   //   .then((state)=>{
   //     setState(state);
@@ -74,11 +74,11 @@ const Allie_add_page = () => {
               <input type="number" id="fees" name="fees" value={state.fees} onChange={handleChange} className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
             </div>
             <div>
-                <label htmlFor="type_of_allie" className="block text-sm font-medium text-gray-700">Type Of Allies: </label>
-                <select name="type_of_allie" id="type_of_allie" value={state.type_of_allie} onChange={handleSelectChange} className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" >
-                    {typesOfAllies.map((type_of_allie) => (
-                        <option value={type_of_allie} key={type_of_allie}>
-                            { type_of_allie}
+                <label htmlFor="type_of_utility" className="block text-sm font-medium text-gray-700">Type Of utilitys: </label>
+                <select name="type_of_utility" id="type_of_utility" value={state.type_of_utility} onChange={handleSelectChange} className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" >
+                    {typesOfutilitys.map((type_of_utility) => (
+                        <option value={type_of_utility} key={type_of_utility}>
+                            { type_of_utility}
                         </option>
                     )) }
                 </select>              

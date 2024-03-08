@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Navbar from './Navbar';
 
 const initialState = {
   ownerName: '',
@@ -39,8 +40,9 @@ const Pg_add_page = () => {
   
 
   return (
+    <>
+    <Navbar/>
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      {/* <Navbar/> */}
       <div className="container mx-auto flex flex-col md:flex-row bg-white rounded-lg shadow-lg overflow-hidden">
         {/* Left Half - Image */}
         <div className="w-full md:w-1/2">
@@ -82,7 +84,8 @@ const Pg_add_page = () => {
           </form>
         </div>
       </div>
-    </div>
+      </div>
+      </>
   );
 };
 

@@ -1,7 +1,7 @@
 package com.example.demo.service;
+import com.example.demo.repository.AllieRepository;
 
 import com.example.demo.model.Allie;
-import com.example.demo.repository.AllieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,6 @@ public class AllieServiceImpl implements AllieService{
 
     @Autowired
     private AllieRepository allieRepository;
-
     @Override
     public Allie saveAllie(Allie allie) {
         return allieRepository.save(allie);
@@ -22,4 +21,5 @@ public class AllieServiceImpl implements AllieService{
     public List<Allie> getAllAllies() {
         return allieRepository.findAll();
     }
+
 }

@@ -14,7 +14,7 @@ const Navbar = () => {
   }
 
   return (
-      <div className='z-50 sticky top-0 bg-black bg-opacity-15 backdrop-blur-md p-12 w-full  flex justify-between items-center h-24  mx-auto px-auto text-white'>
+      <div className='z-50 sticky top-0 bg-black bg-opacity-10 backdrop-blur-md p-12 w-full  flex justify-between items-center h-24  mx-auto px-auto text-white'>
         <h1 className='w-10 text-4xl text-amber-400 font-extrabold'><Link to="/">UrbanRoost</Link></h1>
         {/* <ul className=' hidden lg:flex '>
           <li className='p-4  hover:bg-slate-700 rounded-md '><Link to="/">Home</Link></li>
