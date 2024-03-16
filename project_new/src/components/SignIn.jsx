@@ -13,8 +13,7 @@ const SignIn = () => {
             <label className="block text-gray-600 text-sm mb-2">Choose Account Type:</label>
             <select id="accountType" className="w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-500">
               <option value="owner">Owner</option>
-              <option value="buyer">Tenant/Buyer</option>
-              <option value="allies">Allies</option>
+              <option value="allies">Allie</option>
             </select>
           </div>
 

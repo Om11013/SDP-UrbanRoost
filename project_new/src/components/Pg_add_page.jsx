@@ -80,7 +80,7 @@ const Pg_add_page = () => {
               <label htmlFor="image" className="block text-sm font-medium text-gray-700">Image URL</label>
               <input type="text" id="image" name="image" value={state.image} onChange={handleChange} className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
             </div>
-            <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Add PG</button>
+            <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Add Property</button>
           </form>
         </div>
       </div>

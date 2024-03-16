@@ -1,9 +1,10 @@
 // SignUp.js
 import React, {useEffect,useState} from 'react'
-import { Link } from 'react-router-dom';
+import { Link, redirect, navigate,useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
 import toast from "react-hot-toast";
-
+import { useHistory } from 'react-router-dom';
+import Hero from './Hero';
 
 const initialState = {
   username: '',
@@ -16,6 +17,8 @@ const initialState = {
 const SignUp = () => {
 
   const [state, setState] = useState(initialState);
+  // const history = useHistory();
+  const navigate = useNavigate();
 
   const handleChange = (event) => { 
       setState({...state,[event.target.name]:event.target.value});
@@ -24,8 +27,7 @@ const SignUp = () => {
   const handleSubmit = async (event) => { 
     event.preventDefault();
     
-    const { username, contact, email, password , role} =
-      state;
+    const { username, contact, email, password , role} = state;
     
     if (!username || !contact || !email || !password || !role) {
       return toast.error("Input field should not be empty");
@@ -41,40 +43,28 @@ const SignUp = () => {
       console.log(`${state.role} Entry done`)
       toast(`${state.role} entry done`)
     }).catch(error => console.error('Error occured: ', error));
+    // history.push('/Hero', { role : state.role  });
+  //   navigate("/Hero", {
+  //     state.role,
+    //   });
+    // if (state.role === "owner") { 
+    //   return Navigate(/HeroOwner)
+    // }
+    navigate("/", { state: { role: state.role } });
+
+
+
+
+    
   
-
-    // if (state.role === "owner") {
-    //   fetch("http://localhost:8080/owner/add", {
-    //     method: "POST",
-    //     headers: { "Content-Type": "application/json" },
-    //     body: JSON.stringify(state)
-    //   }).then(() => {
-    //     console.log("Owner Entry done")
-    //     toast("Owner entry done")
-    //   }).catch(error => console.error('Error occured: ', error),
-    //   );
-    // }
-    // else if (state.role === "secretary") {
-    //   fetch("http://localhost:8080/secretary/add", {
-    //     method: "POST",
-    //     headers: { "Content-Type": "application/json" },
-    //     body: JSON.stringify(state)
-    //   }).then(() => {
-    //     console.log("Secretary Entry done")
-    //     toast("Secretary entry done")
-    //   }).catch(error => console.error('Error occured: ', error),
-    //   );
-    // }
-
-
       // fetch("http://localhost:8080/owner/add", {
       //     method: "POST",
       //     headers: { "Content-Type": "application/json" },
       //     body: JSON.stringify(state)
       // }).then(() => {
       //     console.log("New Entry done")
-      // }).catch(error=>console.error('Error occured: ',error));
-  }
+    // }).catch(error=>console.error('Error occured: ',error));
+    }
   // useEffect(()=>{
   //   //   fetch("http://localhost:8080/owner/getAll")
   //   //   .then(res=>res.json())

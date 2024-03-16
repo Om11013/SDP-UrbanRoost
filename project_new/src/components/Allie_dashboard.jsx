@@ -1,6 +1,9 @@
 // import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
+import Testimonials from './Testimonials';
+import Contact from './Contact';
+import Footer from './Footer';
 
 const Allie_dashboard = () => {
     return (
@@ -28,9 +31,9 @@ const Allie_dashboard = () => {
         </div>
       </div>
 
-      <div className="bg-gray-200 py-12 text-center">
+      <div className="bg-gray-300 py-12 text-center">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-8">Fake Statistics</h2>
+          <h2 className="text-3xl font-bold mb-8">Our Statistics</h2>
           <div className="grid grid-cols-3 gap-4">
             <div>
               <p className="text-2xl font-bold">1000+</p>
@@ -38,7 +41,7 @@ const Allie_dashboard = () => {
             </div>
             <div>
               <p className="text-2xl font-bold">500+</p>
-              <p>Verified PGs</p>
+              <p>Verified Properties</p>
             </div>
             <div>
               <p className="text-2xl font-bold">200+</p>
@@ -46,7 +49,12 @@ const Allie_dashboard = () => {
             </div>
           </div>
         </div>
-      </div>
+        </div>
+        <div>
+          <Testimonials />
+          <Contact />
+          <Footer/>
+        </div>
     </div>
   );
 };
