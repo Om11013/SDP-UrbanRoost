@@ -13,7 +13,7 @@ public class Utility {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id = 1;
-    private String allieName;
+    private String allie_name;
     private String contact;
     private String type_of_utility;
     private long fees;
@@ -29,11 +29,11 @@ public class Utility {
     }
 
     public String getAllieName() {
-        return allieName;
+        return allie_name;
     }
 
     public void setAllieName(String allieName) {
-        this.allieName = allieName;
+        this.allie_name = allieName;
     }
 
     public String getContact() {

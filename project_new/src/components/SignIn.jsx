@@ -14,6 +14,8 @@ const SignIn = () => {
             <select id="accountType" className="w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-500">
               <option value="owner">Owner</option>
               <option value="allies">Allie</option>
+              <option value="secretary">Secretary</option>
+              <option value="broker">Broker</option>
             </select>
           </div>
 

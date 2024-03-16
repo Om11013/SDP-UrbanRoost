@@ -85,6 +85,23 @@ const Navbar = ({ role }) => {
             )}
           </li>
         )}
+        {role === 'broker' && (
+          <li className='relative'>
+            <div className='p-4 hover:bg-slate-700 rounded-md cursor-pointer' onClick={handleMore}>
+              More
+            </div>
+            {more && (
+              <ul className='absolute top-full left-0 bg-gray-500 border-t border-r border-l border-gray-700 z-10'>
+                <li className='p-4 hover:bg-slate-700'>
+                  <Link to="/Buyer_view_properties">View Properties</Link>
+                </li>
+                <li className='p-4 hover:bg-slate-700'>
+                  <Link to="/View_services">View Services</Link>
+                </li>
+              </ul>
+            )}
+          </li>
+        )}
       </ul>
       <div onClick={handleNav} className='block lg:hidden'>
         {nav ? <RxCross1 size={20} /> : <FiMenu size={20} />}

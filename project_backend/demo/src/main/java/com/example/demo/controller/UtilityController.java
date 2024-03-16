@@ -11,11 +11,13 @@ import java.util.List;
 @RequestMapping("/utility")
 @CrossOrigin
 public class UtilityController{
+
     @Autowired
     private UtilityService utilityService;
 
     @PostMapping("/add")
     public String add(@RequestBody Utility utility){
+        System.out.println(utility);
         utilityService.saveUtility(utility);
         return "New Utility is added";
     }

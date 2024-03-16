@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 const typesOfutilitys = ['Cleaners', 'Milkmen', 'Carpenters', 'Plumbers', 'Painters'];
 
@@ -7,7 +7,7 @@ const initialState = {
   contact: '',
   fees: '',
   image: '',
-  type_of_utilitys: ''
+  type_of_utility: ''
 }
 const Allie_add_page = () => {
 
@@ -38,15 +38,15 @@ const Allie_add_page = () => {
         });
     }
 
-  useEffect(() => {
-    console.log(state);
-  //   fetch("http://localhost:8080/utility/getAll")
-  //   .then(res=>res.json())
-  //   .then((state)=>{
-  //     setState(state);
-  //   }
-  // )
-  },[state])
+  // useEffect(() => {
+  //   console.log(state);
+  // //   fetch("http://localhost:8080/utility/getAll")
+  // //   .then(res=>res.json())
+  // //   .then((state)=>{
+  // //     setState(state);
+  // //   }
+  // // )
+  // },[state])
   
 
   return (

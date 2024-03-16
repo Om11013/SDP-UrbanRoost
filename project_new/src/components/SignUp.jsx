@@ -1,10 +1,10 @@
 // SignUp.js
-import React, {useEffect,useState} from 'react'
-import { Link, redirect, navigate,useNavigate } from 'react-router-dom';
+import React, {useState} from 'react'
+import { Link, useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
 import toast from "react-hot-toast";
-import { useHistory } from 'react-router-dom';
-import Hero from './Hero';
+// import { useHistory } from 'react-router-dom';
+// import Hero from './Hero';
 
 const initialState = {
   username: '',
@@ -90,6 +90,8 @@ const SignUp = () => {
                   <label htmlFor="isOwner" >Owner</label>
                   <input className='ml-2' type="radio" id="isAllie" name="role" value="allie" checked={state.role === "allie"} onChange={handleChange}/>
                   <label htmlFor="isAllie">Allie</label>
+                  <input className='ml-2' type="radio" id="isBroker" name="role" value="broker" checked={state.role === "broker"} onChange={handleChange}/>
+                  <label htmlFor="isBroker">Broker</label>
         </div>
           <div>
                   <label htmlFor="username" className="block text-gray-600 text-sm mb-2">Username: </label>

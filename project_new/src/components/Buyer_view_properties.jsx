@@ -18,7 +18,7 @@ function Buyer_view_properties() {
       <div className='bg-gray-400'>
         <Navbar/>
         <h2 className="text-2xl font-bold mb-4">Real Estate Properties</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 m-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 m-5">
             {properties.map(property => (
             <div key={property.id} className="bg-white rounded-lg shadow-md p-4">
                 <img src={property.image} alt={property.ownerName} className="w-full h-40 object-cover mb-4" />
