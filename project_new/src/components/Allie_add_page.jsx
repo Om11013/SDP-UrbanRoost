@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
-const typesOfutilitys = ['Cleaners', 'Milkmen', 'Carpenters', 'Plumbers', 'Painters'];
+const typesOfutilities = ['Cleaners', 'Milkmen', 'Carpenters', 'Plumbers', 'Painters'];
 
 const initialState = {
   allieName: '',
@@ -9,55 +10,46 @@ const initialState = {
   image: '',
   type_of_utility: ''
 }
-const Allie_add_page = () => {
 
+const Allie_add_page = () => {
   const [state, setState] = useState(initialState);
 
   const handleChange = (event) => { 
     setState({...state,[event.target.name]:event.target.value});
   }
-  const handleSubmit = (event) => { 
+
+  const handleSubmit = async (event) => { 
     event.preventDefault();
-    console.log("Form Data:", state);
-    fetch("http://localhost:8080/utility/add", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(state)
-    }).then(() => {
-        console.log("New Entry done")
-    }).catch(error=>console.error('Error occured: ',error));
+    try {
+      console.log("Request Payload:", state);
+      await axios.post("http://localhost:8080/utility/add", state);
+      console.log("New Entry done");
+      console.log(state);
+    } catch (error) {
+      console.error('Error occurred: ', error);
+      if (error.response) {
+        console.error('Response Data:', error.response.data);
+      }
     }
+  };
 
-    const handleSelectChange = (event) => { 
-        const selectedOptions = Array.from(
-            event.target.selectedOptions,
-            (option) => option.value
-        );
-        setState({
-            ...state, type_of_utility: selectedOptions
-        });
-    }
-
-  // useEffect(() => {
-  //   console.log(state);
-  // //   fetch("http://localhost:8080/utility/getAll")
-  // //   .then(res=>res.json())
-  // //   .then((state)=>{
-  // //     setState(state);
-  // //   }
-  // // )
-  // },[state])
-  
+  const handleSelectChange = (event) => { 
+    const selectedOptions = Array.from(
+      event.target.selectedOptions,
+      (option) => option.value
+    );
+    setState({
+      ...state, type_of_utility: selectedOptions
+    });
+  }
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="container mx-auto flex flex-col md:flex-row bg-white rounded-lg shadow-lg overflow-hidden">
-        {/* Left Half - Image */}
         <div className="w-full md:w-1/2">
           <img src="https://pilipinasatbp.files.wordpress.com/2018/03/stock-photo-group-of-smiling-people-with-different-jobs-standing-in-line-on-white-background-128885864.jpg" alt="Allie Image" className="object-cover w-full h-full" />
         </div>
 
-        {/* Right Half - Form */}
         <div className="w-full md:w-1/2 p-8">
           <h2 className="text-2xl font-semibold mb-4">Add Your Services</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -74,14 +66,14 @@ const Allie_add_page = () => {
               <input type="number" id="fees" name="fees" value={state.fees} onChange={handleChange} className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
             </div>
             <div>
-                <label htmlFor="type_of_utility" className="block text-sm font-medium text-gray-700">Type Of utilitys: </label>
-                <select name="type_of_utility" id="type_of_utility" value={state.type_of_utility} onChange={handleSelectChange} className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" >
-                    {typesOfutilitys.map((type_of_utility) => (
-                        <option value={type_of_utility} key={type_of_utility}>
-                            { type_of_utility}
-                        </option>
-                    )) }
-                </select>              
+              <label htmlFor="type_of_utility" className="block text-sm font-medium text-gray-700">Type Of utilities</label>
+              <select name="type_of_utility" id="type_of_utility" value={state.type_of_utility} onChange={handleSelectChange} className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                {typesOfutilities.map((type_of_utility) => (
+                  <option value={type_of_utility} key={type_of_utility}>
+                    {type_of_utility}
+                  </option>
+                ))}
+              </select>
             </div>
             <div>
               <label htmlFor="image" className="block text-sm font-medium text-gray-700">Image URL</label>

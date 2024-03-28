@@ -4,6 +4,10 @@ import Testimonials from './Testimonials';
 import Contact from './Contact';
 import Footer from './Footer';
 
+const initialState = {
+  availability : "No"
+}
+
 function Buyer_view_properties() {
   const [properties, setProperties] = useState([]);
 
@@ -27,8 +31,8 @@ function Buyer_view_properties() {
                 <p><span className="font-bold">Contact:</span> {property.contact}</p>
                 <p><span className="font-bold">Location:</span> {property.location}</p>
                 <p><span className="font-bold">Rent:</span> {property.rent}</p>
-                <p><span className="font-bold">Available:</span> {property.available ? 'Yes' : 'No'}</p>
-                <p><span className="font-bold">Occupied:</span> {property.occupied ? 'Yes' : 'No'}</p>
+                <p><span className="font-bold">Available:</span> {property.availability ? 'Yes' : 'No'}</p>
+                {/* <p><span className="font-bold">Occupied:</span> {property.occupied ? 'Yes' : 'No'}</p> */}
                 </div>
             </div>
             ))}

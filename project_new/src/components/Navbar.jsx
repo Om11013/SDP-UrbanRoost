@@ -21,8 +21,13 @@ const Navbar = ({ role }) => {
         <li className='p-4 hover:bg-slate-700 rounded-md'><Link to="/aboutus">About Us</Link></li>
         <li className='p-4 hover:bg-slate-700 rounded-md'><Link to="/contactus">Contact Us</Link></li>
         <li className='p-4 hover:bg-slate-700 rounded-md'><Link to="/signup">Sign Up</Link></li>
+        <li className='p-4 hover:bg-slate-700 rounded-md'><Link to="/signin">Sign In</Link></li>
+        <li className='p-4 hover:bg-slate-700 rounded-md'><Link to="/Buyer_view_properties">View Properties</Link></li>
+        <li className='p-4 hover:bg-slate-700 rounded-md'><Link to="/Pg_owner_dashboard">Owner dashboard</Link></li>
+        <li className='p-4 hover:bg-slate-700 rounded-md'><Link to="/View_services">View Services</Link></li>
+        <li className='p-4 hover:bg-slate-700 rounded-md'><Link to="/Allie_dashboard">Allie dashboard</Link></li>
         {/* Conditional rendering based on role */}
-        {role === 'owner' && (
+        {/* {role === 'owner' && (
           <li className='relative'>
             <div className='p-4 hover:bg-slate-700 rounded-md cursor-pointer' onClick={handleMore}>
               More
@@ -101,7 +106,7 @@ const Navbar = ({ role }) => {
               </ul>
             )}
           </li>
-        )}
+        )} */}
       </ul>
       <div onClick={handleNav} className='block lg:hidden'>
         {nav ? <RxCross1 size={20} /> : <FiMenu size={20} />}

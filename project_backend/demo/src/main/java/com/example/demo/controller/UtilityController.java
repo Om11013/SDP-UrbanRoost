@@ -17,7 +17,7 @@ public class UtilityController{
 
     @PostMapping("/add")
     public String add(@RequestBody Utility utility){
-        System.out.println(utility);
+        System.out.println("Hiiiiiiiiiiiiiiiiiiiii");
         utilityService.saveUtility(utility);
         return "New Utility is added";
     }

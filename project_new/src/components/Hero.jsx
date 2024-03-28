@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import Footer from './Footer';
 import Testimonials from './Testimonials';
 import Contact from './Contact';
-import SignUp from './SignUp';
 import { useLocation } from 'react-router-dom';
 
 const Hero = () => {

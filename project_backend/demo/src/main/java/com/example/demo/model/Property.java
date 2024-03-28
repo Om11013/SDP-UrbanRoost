@@ -16,8 +16,7 @@ public class Property {
     private long contact;
     private long rent;
     private String Location;
-    private Boolean available;
-    private Boolean occupied;
+    private String availability;
     private String image;
 
     public int getId() {
@@ -68,19 +67,11 @@ public class Property {
         this.image = image;
     }
 
-    public Boolean getAvailable() {
-        return available;
+    public String getAvailability() {
+        return availability;
     }
 
-    public void setAvailable(Boolean available) {
-        this.available = available;
-    }
-
-    public Boolean getOccupied() {
-        return occupied;
-    }
-
-    public void setOccupied(Boolean occupied) {
-        this.occupied = occupied;
+    public void setAvailability(String availability) {
+        this.availability = availability;
     }
 }

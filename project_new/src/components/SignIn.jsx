@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Navbar from './Navbar';
 
 
 const SignIn = () => {
   return (
+    <>
+      <Navbar/>
     <div className="bg-gray-100 h-screen flex items-center justify-center">
       <div className="bg-white p-8 rounded shadow-md w-96">
         <h2 className="text-gray-800 text-2xl font-semibold mb-4">Sign In</h2>
@@ -34,7 +37,8 @@ const SignIn = () => {
 
         <p className="mt-4 text-gray-600 text-sm">Don't have an account? <Link to="/signup">Sign Up</Link></p>
       </div>
-    </div>
+      </div>
+      </>
   );
 }
 
