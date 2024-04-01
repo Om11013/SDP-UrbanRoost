@@ -14,6 +14,7 @@ import Allie_dashboard from './components/Allie_dashboard';
 import Allie_add_page from './components/Allie_add_page';
 import Buyer_view_properties from './components/Buyer_view_properties';
 import View_services from './components/View_services';
+import Admin_dashboard from './components/Admin_dashboard';
 
 function App() {
   return (
@@ -33,6 +34,8 @@ function App() {
             <Route exact path="/Allie_add_page" element={ <Allie_add_page/>}/>
             <Route exact path="/Buyer_view_properties" element={<Buyer_view_properties />} />
             <Route exact path="/View_services" element={<View_services />} />
+            <Route exact path="/admin_dashboard" element={<Admin_dashboard />} />
+            
             
 
           </Routes>

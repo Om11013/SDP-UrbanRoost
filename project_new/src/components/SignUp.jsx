@@ -33,14 +33,17 @@ const SignUp = () => {
 
     try {
       await axios.post(`http://localhost:8080/${state.role}/add`, state);
+      await axios.post(`http://localhost:8080/user/add`, state);
+
       console.log(`${state.role} Entry done`);
       toast(`${state.role} entry done`);
-      navigate("/", { state: { role: state.role } });
+       
     } catch (error) {
       console.error('Error occurred: ', error);
     }
 
-    navigate("/", { state: { role: state.role } });
+    navigate("/signin", { state: { role: state.role } });
+
   };
 
   return (

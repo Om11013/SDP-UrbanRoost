@@ -1,6 +1,0 @@
-separate dashboard for owner,secretary and allie
-
-text animation in front page
-inquires class
-reviews by customer and display
-work on sidebar when screen shrinks

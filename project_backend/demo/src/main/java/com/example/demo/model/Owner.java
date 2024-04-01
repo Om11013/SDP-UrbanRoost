@@ -6,21 +6,17 @@ import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
 @Entity
-//@Table(uniqueConstraints = @UniqueConstraint(columnNames = "email"))
-public class Owner {
+public class Owner{
     public Owner() {
     }
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id=1;
-//    @Pattern(regexp = "^[a-zA-Z ]+$", message = "Characters from (a-z,A-Z) are allowed")@NotBlank(message = "Field cannot be blank")
+    private int id;
     private String username;
-//    @Pattern(regexp = "^[6-9]\\d{9}$",message = "Enter valid contact number")@NotBlank(message = "Field cannot be blank")
     private long contact;
-//    @Size(max=6, message = "Max size is 6")@NotBlank(message = "Field cannot be blank")
     private String password;
-//    @NotBlank(message = "Field cannot be blank")
     private String email;
     private String role;
+
     public long getContact() {
         return contact;
     }
@@ -42,7 +38,7 @@ public class Owner {
     }
 
     public void setId(int id) {
-        this.id = id+1;
+        this.id = id;
     }
 
     public String getUsername() {
@@ -68,4 +64,5 @@ public class Owner {
     public void setEmail(String email) {
         this.email = email;
     }
+
 }
