@@ -1,6 +1,7 @@
 # SDP-UrbanRoost
 
 Features:
+
 •	User Authentication: Users can register and login with their email and password.
 •	Role-Based Access Control: Different roles have different levels of access to features and functionalities.
 •	Dashboard for Each Role: Each role has its own dashboard tailored to its specific tasks and responsibilities.
@@ -9,25 +10,33 @@ Features:
 •	View Properties and Services: All users can view properties and services enlisted by owners and allies.
 •	Admin Privileges: Admin users have access to all functionalities and can manage users, properties, and services.
 
+
 Technologies Used:
+
 •	Frontend: React.js, Tailwind CSS
 •	Backend: Spring Boot
 •	Database: MySQL
 
-Deployment
+Deployment:
+
 The application is deployed using Vercel for the frontend and Spring Boot for the backend. The database is hosted on MySQL.
 
-Getting Started
+
+Getting Started:
+
 1.	Clone the repository: git clone <repository-url>
 2.	Install dependencies: npm install (for frontend) and mvn install (for backend)
 3.	Set up the database and configure the backend accordingly
 4.	Run the frontend and backend servers
 5.	Access the application in your web browser
 
-Usage
+Usage:
+
 1.	Register or login with your email and password.
 2.	Explore the dashboard specific to your role (Admin, Secretary, Owner, Allie, or Broker).
 3.	Perform tasks such as enlisting properties/services, viewing properties/services, and managing users (for admins).
 
-Contact
+
+Contact:
+
 For any inquiries or issues, please contact poonjaniom11@gmail.com.
