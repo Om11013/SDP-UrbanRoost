@@ -17,6 +17,7 @@ Features:
 •	Admin Privileges: Admin users have access to all functionalities and can manage users, properties, and services.
 
 
+
 Technologies Used:
 
 •	Frontend: React.js, Tailwind CSS
@@ -25,9 +26,12 @@ Technologies Used:
 
 •	Database: MySQL
 
+
+
 Deployment:
 
 The application is deployed using Vercel for the frontend and Spring Boot for the backend. The database is hosted on MySQL.
+
 
 
 Getting Started:
@@ -38,11 +42,14 @@ Getting Started:
 4.	Run the frontend and backend servers
 5.	Access the application in your web browser
 
+
+
 Usage:
 
 1.	Register or login with your email and password.
 2.	Explore the dashboard specific to your role (Admin, Secretary, Owner, Allie, or Broker).
 3.	Perform tasks such as enlisting properties/services, viewing properties/services, and managing users (for admins).
+
 
 
 Contact:
