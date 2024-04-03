@@ -36,10 +36,8 @@ const SignIn = () => {
         }
       })
       .then(response => {
-        // Retrieve user ID and role from the response data
         const { id, role } = response.data;
   
-        // Now you can use these variables as needed
         console.log("User ID:", id);
         console.log("Role:", role);
   
@@ -48,7 +46,6 @@ const SignIn = () => {
         alert("User verified");
         navigate("/", { state: { role: role } });
 
-        // navigate("/")
       })
       .catch(error => {
         console.error('Error occurred: ', error);

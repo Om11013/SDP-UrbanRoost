@@ -15,6 +15,9 @@ import Allie_add_page from './components/Allie_add_page';
 import Buyer_view_properties from './components/Buyer_view_properties';
 import View_services from './components/View_services';
 import Admin_dashboard from './components/Admin_dashboard';
+import Properties from './components/Properties';
+import Maintenance from './components/Maintenance';
+import SignOut from './components/SignOut';
 
 function App() {
   return (
@@ -35,17 +38,14 @@ function App() {
             <Route exact path="/Buyer_view_properties" element={<Buyer_view_properties />} />
             <Route exact path="/View_services" element={<View_services />} />
             <Route exact path="/admin_dashboard" element={<Admin_dashboard />} />
-            
-            
+            <Route exact path="/properties/:id" element={<Properties />} />
+            <Route exact path="/maintenance" element={<Maintenance />} />     
+            <Route exact path="/signout" element={<SignOut />} />     
 
           </Routes>
         </div>
       </div>
     </BrowserRouter>
-
-    // <div>
-    //   </>
-    // </div>
   );
 }
 

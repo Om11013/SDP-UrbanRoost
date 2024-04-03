@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Navbar from '../components/Navbar';
 import toast from 'react-hot-toast';
+import "../components/admin_dashboard.css"
 
-function AdminDashboard() { // Renamed the component to AdminDashboard
-  const [users, setUsers] = useState([]); // Changed 'appointments' to 'users' for better clarity
+function AdminDashboard() {
+  const [users, setUsers] = useState([]);
   const [editableFields, setEditableFields] = useState({});
 
   useEffect(() => {
@@ -22,28 +23,27 @@ function AdminDashboard() { // Renamed the component to AdminDashboard
   }, []);
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:8080/user/${id}`) // Updated the endpoint to delete a user
+    axios.delete(`http://localhost:8080/user/${id}`)
       .then(response => {
-        setUsers(users.filter(user => user.id !== id)); // Updated 'appointments' to 'users'
-        toast("User Deleted"); // Updated toast message
-        
+        setUsers(users.filter(user => user.id !== id));
+        toast("User Deleted");
       })
       .catch(error => {
-        console.error('Error deleting user: ', error); // Updated error message
-        toast("User Not Deleted"); // Updated toast message
+        console.error('Error deleting user: ', error);
+        toast("User Not Deleted");
       });
   };
 
   const handleEdit = (id) => {
-    const editedUser = users.find(user => user.id === id); // Updated 'appointments' to 'users'
-    axios.patch(`http://localhost:8080/user/${id}`, editedUser) // Updated the endpoint to edit a user
+    const editedUser = users.find(user => user.id === id);
+    axios.patch(`http://localhost:8080/user/${id}`, editedUser)
       .then(response => {
-        toast("User Edited"); // Updated toast message
-        toggleEdit(id); // Toggle back to view mode after successful edit
+        toast("User Edited");
+        toggleEdit(id);
       })
       .catch(error => {
-        console.error('Error updating user: ', error); // Updated error message
-        toast("User Not Edited"); // Updated toast message
+        console.error('Error updating user: ', error);
+        toast("User Not Edited");
       });
   };
 
@@ -71,7 +71,7 @@ function AdminDashboard() { // Renamed the component to AdminDashboard
           }
         `}
       </style>
-      <Navbar />
+      <Navbar/>
       <div className="admin-dashboard-container">
         <table className="admin-dashboard-table">
           <thead>
@@ -128,4 +128,4 @@ function AdminDashboard() { // Renamed the component to AdminDashboard
   );
 }
 
-export default AdminDashboard; // Updated component name to AdminDashboard
+export default AdminDashboard;

@@ -6,7 +6,7 @@ const initialState = {
   ownerName: '',
   contact: '',
   rent: '',
-  availability: '', // Changed 'available' to 'availability'
+  availability: '', 
   location: '',
   image: ''
 };
@@ -35,12 +35,10 @@ const Pg_add_page = () => {
       <Navbar />
       <div className="flex justify-center items-center min-h-screen bg-gray-100">
         <div className="container mx-auto flex flex-col md:flex-row bg-white rounded-lg shadow-lg overflow-hidden">
-          {/* Left Half - Image */}
           <div className="w-full md:w-1/2">
             <img src="https://images.pexels.com/photos/1774931/pexels-photo-1774931.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="PG Image" className="object-cover w-full h-full" />
           </div>
 
-          {/* Right Half - Form */}
           <div className="w-full md:w-1/2 p-8">
             <h2 className="text-2xl font-semibold mb-4">Add Your Listing</h2>
             <form onSubmit={handleSubmit} className="space-y-4">

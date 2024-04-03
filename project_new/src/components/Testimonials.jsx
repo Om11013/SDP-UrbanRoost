@@ -1,13 +1,11 @@
 import React from 'react'
 
 const Testimonials = () => {
-    // You can replace the static content with dynamic content fetched from a backend or stored in a state
     return (
       <section className="bg-gray-200 py-10">
         <div className="max-w-5xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8 text-black">What Our Customers Say</h2>
           <div className="flex flex-wrap -mx-4">
-            {/* Testimonial cards */}
             <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
               <div className="bg-white shadow-md p-6 rounded-lg">
                 <p className="text-gray-800 mb-4">"I recently purchased a property through this website, and I couldn't be happier with the experience. The process was smooth from start to finish, and the team was incredibly helpful every step of the way. Would definitely recommend."</p>

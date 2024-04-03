@@ -9,12 +9,12 @@ import { useLocation } from 'react-router-dom';
 const Hero = () => {
   const strings = [' Rent a place ', ' Sell a place ', ' Offer services '];
   const location = useLocation();
-  const { role } = location.state || {}; // Retrieve role parameter from location state
-  console.log(location.state); // Log the location state to console
+  const { role } = location.state || {}; 
+  console.log(location.state); 
 
   return (
     <div className='text-white bg-slate-800'>
-      <Navbar role={role} /> {/* Pass role as a prop to the Navbar component */}
+      <Navbar role={role} /> 
       <div className='max-w-[800px] mt-[-96px] w-full mx-auto h-screen text-center flex flex-col justify-center'>
         <p className='text-amber-400 font-bold p-2'>Hey, Welcome to UrbanRoost</p>
         <div className='flex justify-center items-center my-4'>
