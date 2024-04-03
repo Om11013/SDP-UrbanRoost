@@ -1,72 +1,57 @@
-# Getting Started with Create React App
+# SDP-UrbanRoost
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Features:
 
-## Available Scripts
+•	User Authentication: Users can register and login with their email and password.
 
-In the project directory, you can run:
+•	Role-Based Access Control: Different roles have different levels of access to features and functionalities.
 
-### `npm start`
+•	Dashboard for Each Role: Each role has its own dashboard tailored to its specific tasks and responsibilities.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+•	Property Management: Owners can enlist their properties for rent/sale, providing details such as contact information, rent, and property images.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.  
+•	Service Management: Allies can enlist their services and provide details such as contact information, fees, and service images.
 
-### `npm test`
+•	View Properties and Services: All users can view properties and services enlisted by owners and allies.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+•	Admin Privileges: Admin users have access to all functionalities and can manage users, properties, and services.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Technologies Used:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+•	Frontend: React.js, Tailwind CSS
 
-### `npm run eject`
+•	Backend: Spring Boot
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+•	Database: MySQL
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Deployment:
 
-## Learn More
+The application is deployed using Vercel for the frontend and Spring Boot for the backend. The database is hosted on MySQL.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+Getting Started:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1.	Clone the repository: git clone https://github.com/Om11013/SDP-UrbanRoost.git
+2.	Install VScode for frontend, SpringToolSuite/IntelliJ IDEA for backend and I have used MySQL as a database 
+3.	Set up the database and configure the backend accordingly
+4.	Run the frontend and backend servers
+5.	Access the application in your web browser
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+Usage:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1.	Register or login with your email and password.
+2.	Explore the dashboard specific to your role (Admin, Secretary, Owner, Allie, or Broker).
+3.	Perform tasks such as enlisting properties/services, viewing properties/services, and managing users (for admins).
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+Contact:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-"# UrbanRoost" 
-"# UrbanRoost" 
+For any inquiries or issues, please contact poonjaniom11@gmail.com.
