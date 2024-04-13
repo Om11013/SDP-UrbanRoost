@@ -13,7 +13,7 @@ function Buyer_view_properties() {
   const [properties, setProperties] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:8080/property/getAll')
+    fetch('https://silent-plane-production.up.railway.app/property/getAll')
       .then((response) => response.json())
       .then((data) => setProperties(data))
       .catch((error) => console.error('Error fetching properties:', error))

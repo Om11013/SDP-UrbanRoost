@@ -7,7 +7,7 @@ import Contact from './Contact';
 import { useLocation } from 'react-router-dom';
 
 const Hero = () => {
-  const strings = [' Rent a place ', ' Sell a place ', ' Offer services '];
+  const strings = [' Rent a place, ', ' Sell a place, ', ' Offer services '];
   const location = useLocation();
   const { role } = location.state || {}; 
   console.log(location.state); 

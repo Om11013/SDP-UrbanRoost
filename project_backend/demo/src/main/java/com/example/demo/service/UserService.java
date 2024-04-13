@@ -13,7 +13,6 @@ public interface UserService {
     public User findUserByEmail(String email);
     public void deleteUserById(int id);
     public Optional<User> findUserById(int id);
-
     public User editUser(User user, int id);
 
 

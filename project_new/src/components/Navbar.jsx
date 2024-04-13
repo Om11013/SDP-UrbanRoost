@@ -16,11 +16,11 @@ const Navbar = ({ role }) => {
   }
 
   return (
-    <div className="z-50 sticky top-0 bg-black bg-opacity-10 backdrop-blur-md p-12 w-full  flex justify-between items-center h-24  mx-auto px-auto text-white">
+    <div className="z-50 sticky top-0 bg-black bg-opacity-10 backdrop-blur-md p-12 w-full flex justify-between items-center h-24 mx-auto px-auto text-white">
       <h1 className="w-10 text-4xl text-amber-400 font-extrabold">
         <Link to="/">UrbanRoost</Link>
       </h1>
-      <ul className="hidden lg:flex">
+      <ul className="hidden lg:flex flex-grow justify-end">
         <li className="p-4 hover:bg-slate-700 rounded-md">
           <Link to="/">Home</Link>
         </li>
@@ -31,12 +31,9 @@ const Navbar = ({ role }) => {
           <Link to="/contactus">Contact Us</Link>
         </li>
         <li className="p-4 hover:bg-slate-700 rounded-md">
-          <Link to="/signup">Sign Up</Link>
+          <Link to="/signup">Sign Up / Sign In</Link>
         </li>
         {console.log(role)}
-        <li className="p-4 hover:bg-slate-700 rounded-md">
-          <Link to="/signin">Sign In</Link>
-        </li>
         <li className="p-4 hover:bg-slate-700 rounded-md">
           <Link to="/signout">Sign Out</Link>
         </li>
@@ -120,9 +117,9 @@ const Navbar = ({ role }) => {
             : 'fixed left-0 top-0 w-[50%] h-full border-r border-r-gray-500 bg-gray-500 ease-in-out duration-300'
         }
       >
-        <div className="flex">
+        <div className="flex side-block ">
           <div className="inline-block">
-            <h1 className="p-3 w-full text-4xl text-amber-400 font-extrabold m-auto p-auto">UrbanRoost</h1>
+            <h1 className="w-auto  text-amber-400 font-extrabold m-auto p-auto">UrbanRoost</h1>
           </div>
         </div>
         <ul className="uppercase p-4">
@@ -136,10 +133,7 @@ const Navbar = ({ role }) => {
             <Link to="/contactus">Contact Us</Link>
           </li>
           <li className="text-black p-4 border-b border-b-gray-600">
-            <Link to="/signin">Sign In</Link>
-          </li>
-          <li className="text-black p-4 border-b border-b-gray-600">
-            <Link to="/signup">Sign Up</Link>
+            <Link to="/signup">Sign Up / Sign In</Link>
           </li>
           <li className="text-black p-4 border-b border-b-gray-600">
             <Link to="/signout">Sign Out</Link>

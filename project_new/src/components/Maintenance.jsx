@@ -1,16 +1,20 @@
-import React from 'react'
-import Navbar from './Navbar'
+import React from 'react';
+import Navbar from './Navbar';
+
+const getRandomInt = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
 
 const Maintenance = () => {
   const maintenanceData = [
-    { id: 1, serviceName: 'Plumbing', serviceType: 'Repair', fees: '500' },
-    { id: 2, serviceName: 'Electrical', serviceType: 'Installation', fees: '1000' },
-    { id: 3, serviceName: 'Milkmen', serviceType: 'Utility', fees: '800' },
-    { id: 4, serviceName: 'Cleaning', serviceType: 'Deep Cleaning', fees: '500' },
-    { id: 5, serviceName: 'Painting', serviceType: 'Interior', fees: '1500' },
-  ]
+    { id: 1, serviceName: 'Plumbing', serviceType: 'Repair', fees: getRandomInt(500, 2500) },
+    { id: 2, serviceName: 'Electrical', serviceType: 'Installation', fees: getRandomInt(500, 2500) },
+    { id: 3, serviceName: 'Milkmen', serviceType: 'Utility', fees: getRandomInt(500, 2500) },
+    { id: 4, serviceName: 'Cleaning', serviceType: 'Deep Cleaning', fees: getRandomInt(500, 2500) },
+    { id: 5, serviceName: 'Painting', serviceType: 'Interior', fees: getRandomInt(500, 2500) },
+  ];
 
-  const totalFees = maintenanceData.reduce((total, item) => total + parseInt(item.fees), 0)
+  const totalFees = maintenanceData.reduce((total, item) => total + parseInt(item.fees), 0);
 
   return (
     <>
@@ -45,7 +49,7 @@ const Maintenance = () => {
         </table>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Maintenance
+export default Maintenance;

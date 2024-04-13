@@ -21,7 +21,7 @@ const SignOut = () => {
     })
   }
 
-  //   axios.post("http://localhost:8080/user/login", state, {
+  //   axios.post("https://silent-plane-production.up.railway.app/user/login", state, {
   //     headers: {
   //       "Content-Type": "application/json"
   //     }
@@ -46,9 +46,11 @@ const SignOut = () => {
 
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:8080/user/${id}`)
+      .delete(`https://silent-plane-production.up.railway.app/user/${id}`)
       .then((response) => {
         setState(state.filter((state) => state.id !== id))
+        console.log('User ID:', id)
+        // console.log("Role:", role);
         toast('User Deleted')
       })
       .catch((error) => {
